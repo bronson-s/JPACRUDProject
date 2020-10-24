@@ -1,5 +1,6 @@
 package com.skilldistillery.jpacrud.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +12,16 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
-
+	private String author;
+	@Column(name="year_published")
+	private Integer yearPublished;
+	@Column(name="page_count")
+	private Integer pageCount;
+    private String publisher;
+    private String description;
+    @Column(name="purchase_price")
+    private Double purchasePrice;
+    
 	public int getId() {
 		return id;
 	}
@@ -22,6 +32,54 @@ public class Book {
 
 	public String getTitle() {
 		return title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public Integer getYearPublished() {
+		return yearPublished;
+	}
+
+	public void setYearPublished(Integer yearPublished) {
+		this.yearPublished = yearPublished;
+	}
+
+	public Integer getPageCount() {
+		return pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Double getPurchasePrice() {
+		return purchasePrice;
+	}
+
+	public void setPurchasePrice(Double purchasePrice) {
+		this.purchasePrice = purchasePrice;
 	}
 
 	public void setTitle(String title) {
@@ -39,6 +97,18 @@ public class Book {
 		builder.append(id);
 		builder.append(", title=");
 		builder.append(title);
+		builder.append(", author=");
+		builder.append(author);
+		builder.append(", yearPublished=");
+		builder.append(yearPublished);
+		builder.append(", pageCount=");
+		builder.append(pageCount);
+		builder.append(", publisher=");
+		builder.append(publisher);
+		builder.append(", description=");
+		builder.append(description);
+		builder.append(", purchasePrice=");
+		builder.append(purchasePrice);
 		builder.append("]");
 		return builder.toString();
 	}
