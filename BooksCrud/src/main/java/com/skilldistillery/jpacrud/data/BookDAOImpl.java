@@ -31,11 +31,24 @@ public class BookDAOImpl implements BookDAO {
 	
 		return books;
 	}
+
+	
 	@Transactional
 	@Override
 	public Book createNewBook(Book book) {
 		em.persist(book);
 	return book;
 	}
+    @Transactional
+	@Override
+	public Book updateBook(int id, Book book) {
+	  Book upbook = em.find(Book.class, id);
+	  upbook.setDescription(book.getDescription());
+	  upbook.setPurchasePrice(book.getPurchasePrice());
+		return upbook;
+	}
+	
+	
+	
 
 }

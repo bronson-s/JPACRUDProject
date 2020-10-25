@@ -12,5 +12,19 @@
 
 </div>
 
+<div>
+    <form action="deleteBook.do" method="POST">
+    <input type= "hidden" value="${book.id}" name="id">
+         <input type="submit" value="Delete Book" />
+	</form> 
+</div>
+
+<div>
+	<form action="updateBook.do" method="POST">
+    <input type= "hidden" value="${book.id}" name="id">
+         <input type="submit" value="Update Book" />
+	</form>
+</div>	
+
 </body>
 </html>
