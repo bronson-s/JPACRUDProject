@@ -8,6 +8,18 @@ import javax.persistence.Id;
 
 @Entity
 public class Book {
+	public Book(String title, String author, Integer yearPublished, Integer pageCount, String publisher,
+			String description, Double purchasePrice) {
+		super();
+		this.title = title;
+		this.author = author;
+		this.yearPublished = yearPublished;
+		this.pageCount = pageCount;
+		this.publisher = publisher;
+		this.description = description;
+		this.purchasePrice = purchasePrice;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

@@ -13,9 +13,12 @@
 <form action="getBook.do" method="GET">
   Book ID: <input type="text" name="bid" />
   <input type="submit" value="Show Book" />
-</form>
- 
- 
+</form> <br>
+
+
+<a href="createBook.html">Create Book</a><br/>
+
+
  
 <c:forEach var="book" items= "${books}" >
 

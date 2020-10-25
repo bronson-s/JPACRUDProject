@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.skilldistillery.jpacrud.data.BookDAO;
 import com.skilldistillery.jpacrud.entities.Book;
@@ -28,5 +29,14 @@ public class booksController {
 		return "show";
 		
 	}
+	@RequestMapping(path="createBook.do", method = RequestMethod.GET )
+	public String addBook(Model model,Book book) {
+
+		model.addAttribute("book", dao.createNewBook(book));
+		
+		
+		return "bookAdded";
+	}
+	
 	
 }

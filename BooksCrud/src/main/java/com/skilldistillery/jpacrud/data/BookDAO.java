@@ -9,4 +9,5 @@ import com.skilldistillery.jpacrud.entities.Book;
 public interface BookDAO {
 Book findById(int id);
 List<Book> findAll();
+Book createNewBook (Book book);
 }
