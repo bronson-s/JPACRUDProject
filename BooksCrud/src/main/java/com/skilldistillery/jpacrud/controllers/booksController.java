@@ -45,9 +45,10 @@ public class booksController {
 		return mv;
 	}
 	@RequestMapping("updatingBook.do")
-	public ModelAndView updating (Integer id, String description, Double purchasePrice ) {
+	public ModelAndView updating (Integer id, String title, String description, Double purchasePrice ) {
 		ModelAndView mv = new ModelAndView();
 		Book book = dao.findById(id);
+		book.setTitle(title);
 		book.setDescription(description);
 		book.setPurchasePrice(purchasePrice);
 		mv.addObject("book", dao.updateBook(id, book));
