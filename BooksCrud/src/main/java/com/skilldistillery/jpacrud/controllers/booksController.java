@@ -54,6 +54,13 @@ public class booksController {
 		mv.setViewName("updated");
 		return mv;
 	}
+	@RequestMapping("deleteBook.do")
+	public ModelAndView delete(int id) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("book", dao.deleteBook(id));
+		mv.setViewName("deleted");
+		return mv;
+	}
 	
 	
 	

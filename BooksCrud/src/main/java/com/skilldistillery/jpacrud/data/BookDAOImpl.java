@@ -47,6 +47,14 @@ public class BookDAOImpl implements BookDAO {
 	  upbook.setPurchasePrice(book.getPurchasePrice());
 		return upbook;
 	}
+
+	@Override
+	public boolean deleteBook(int id) {
+		Book book = em.find(Book.class, id);
+		em.remove(book);
+		boolean wasDeleted = ! em.contains(book);
+		return wasDeleted;
+	}
 	
 	
 	
